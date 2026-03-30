@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чек</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+        }
+
+        .receipt {
+            width: 640px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 25px 30px;
+            border-left: 4px solid #000;
+            border-right: 1px solid #000;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+        }
+
+        .title {
+            margin-bottom: 15px;
+        }
+
+        .title h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .title p {
+            margin: 3px 0;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            margin: 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #000;
+        }
+
+        .block {
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        .block div {
+            margin-bottom: 5px;
+        }
+
+        .label {
+            display: inline-block;
+            width: 160px;
+            font-weight: bold;
+        }
+
+        .items {
+            margin-top: 20px;
+        }
+
+        .item-header,
+        .item {
+            display: flex;
+            padding: 6px 0;
+            font-size: 14px;
+        }
+
+        .item-header {
+            border-bottom: 2px solid #000;
+            font-weight: bold;
+        }
+
+        .item {
+            border-bottom: 1px dotted #aaa;
+        }
+
+        .col-1 { width: 6%; }
+        .col-2 { width: 44%; }
+        .col-3 { width: 15%; text-align: right; }
+        .col-4 { width: 15%; text-align: right; }
+        .col-5 { width: 20%; text-align: right; }
+
+        .summary {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #000;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #444;
+            border-top: 1px dashed #ccc;
+            padding-top: 10px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="receipt">
+
+    <div class="title">
+        <h2>ООО «Обувь» – магазин по продаже обуви</h2>
+        <p>Документ об оформлении заказа</p>
+    </div>
+
+    <div class="meta">
+        <div>Номер документа: ________</div>
+        <div>Дата: __________</div>
+    </div>
+
+    <div class="block">
+        <div><span class="label">Покупатель:</span> ________________________</div>
+        <div><span class="label">Контактные данные:</span> ________________________</div>
+    </div>
+
+    <div class="block">
+        <div><span class="label">Адрес доставки:</span></div>
+        <div>________________________________________</div>
+    </div>
+
+    <div class="items">
+
+        <div class="item-header">
+            <div class="col-1">№</div>
+            <div class="col-2">Наименование</div>
+            <div class="col-3">Цена</div>
+            <div class="col-4">Кол-во</div>
+            <div class="col-5">Сумма</div>
+        </div>
+
+        <div class="item">
+            <div class="col-1">1</div>
+            <div class="col-2">________________</div>
+            <div class="col-3">_____</div>
+            <div class="col-4">_____</div>
+            <div class="col-5">_____</div>
+        </div>
+
+        <div class="item">
+            <div class="col-1">2</div>
+            <div class="col-2">________________</div>
+            <div class="col-3">_____</div>
+            <div class="col-4">_____</div>
+            <div class="col-5">_____</div>
+        </div>
+
+    </div>
+
+    <div class="summary">
+        Итоговая сумма: __________
+    </div>
+
+    <div class="note">
+        Примечание: документ сформирован автоматически в системе и не требует подписи.
+    </div>
+
+    <div class="footer">
+        Спасибо за покупку!
+    </div>
+
+</div>
+
+</body>
+</html>
