@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="ShoesShop.UserControls.ShoesesUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShoesShop.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+    <Grid>
+        <Border BorderBrush="#67BA80" BorderThickness="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2.7*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="img" Source="/Resources/picture.png" Stretch="Uniform" Height="180" Width="200"/>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <!--категория товара-->
+                        <Run Text="{Binding Category.CategoryName}"/>
+                        <Run Text=" | "/>
+                        <!--наименование товара-->
+                        <Run Text="{Binding TovarName}"/>
+                    </TextBlock>
+                    <!--описание товара-->
+                    <!--<TextBlock Text="{Binding TovarDescription, StringFormat={}Описание товара: {0}}" VerticalAlignment="Center" HorizontalAlignment="Left"/>-->
+                    <TextBlock Text="{Binding TovarDescription, StringFormat={}Описание товара: {0}}" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Left"
+                               TextTrimming="CharacterEllipsis"
+                               TextWrapping="NoWrap"
+                               MaxWidth="300" />
+                    
+                    <!--производитель-->
+                    <TextBlock Text="{Binding Manufacturer.ManufacturerName, StringFormat={}Производитель: {0}}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    <!--поставщик-->
+                    <TextBlock Text="{Binding Supplier.SupplierName, StringFormat={}Поставщик: {0}}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    <WrapPanel Orientation="Horizontal">
+                        <!--цена-->
+                        <TextBlock x:Name="price" Text="{Binding TovarPrice}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,10,0"/>
+                        <TextBlock x:Name="price_with_discount" VerticalAlignment="Center" HorizontalAlignment="Left" Visibility="Collapsed" Margin="0,0,10,0"/>
+                        <TextBlock Text="руб." VerticalAlignment="Center" HorizontalAlignment="Left" />
+                        
+                    </WrapPanel>
+                    
+                    <!--единица измерения-->
+                    <TextBlock Text="{Binding UnitOfMeasurement, StringFormat={}Единица измерения: {0}}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    <!--кол-во на складе-->
+                    <TextBlock x:Name="count_in_stock" Text="{Binding QuantityInStock, StringFormat={}Кол-во на складе: {0}}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    <!--<TextBlock Text="{Binding PhoneNumber, StringFormat=+7 {0:###}}" VerticalAlignment="Center" HorizontalAlignment="Left"/>-->
+                    </StackPanel>
+                
+                
+                <StackPanel x:Name="percent" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Действующая скидка: " VerticalAlignment="Center" Padding="5"/>
+                    <TextBlock x:Name="procents" HorizontalAlignment="Center"/>
+                </StackPanel>
+                
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

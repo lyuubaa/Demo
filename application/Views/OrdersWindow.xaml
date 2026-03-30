@@ -1,0 +1,43 @@
+﻿<Window x:Class="ShoesShop.Views.OrdersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShoesShop.Views"
+        mc:Ignorable="d"
+         Title="Окно заказов"  Height="852" Width="1411" WindowState="Maximized" Icon="/Resources/Icon.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5.5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#667FFF00">
+            <Image x:Name="logo" VerticalAlignment="Center" Source="/Resources/Icon.png" HorizontalAlignment="Left" Margin="20"/>
+            <TextBlock Text="Заказы" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="26"/>
+            <WrapPanel HorizontalAlignment="Right" Margin="15 0" VerticalAlignment="Center">
+                <Button x:Name="add_order_bt" Visibility="Collapsed" HorizontalAlignment="Left" Content="Добавить заказ" Padding="10,10" Margin="15,15,0,15" FontSize="18" BorderThickness="2" Click="add_order_bt_Click"/>
+                <Button x:Name="back_bt" HorizontalAlignment="Left" Content="Назад" Padding="10,10" Margin="15,15,0,15" FontSize="18" Click="back_bt_Click"/>
+            </WrapPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="#FFFFFF">
+            <ListView x:Name="orders_list" HorizontalContentAlignment="Stretch">
+                <ListView.ContextMenu>
+                    <ContextMenu x:Name="order_menu" Visibility="Collapsed">
+                        <MenuItem x:Name="statusMenuItem"
+                          Header="Изменить статус"
+                          Click="statusMenuItem_Click"
+                          Background="Transparent"
+                          Foreground="#FF2E0222"/>
+                    </ContextMenu>
+                </ListView.ContextMenu>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+        </Grid>
+    </Grid>
+</Window>
